@@ -117,7 +117,7 @@ dkt.app = angular.module('dkt_app', ['ui.bootstrap']);
 dkt.app.service('Backend', ['$http', '$rootScope', function($http, $root) {
   var service = {};
   service.update = function() {
-    $http.get('dkt.json').success(function(resp) {
+    $http.get('data/dkt.json').success(function(resp) {
       service.sections = resp;
       dkt.questions['car'] = resp;
       $root.$broadcast('updatedData');
